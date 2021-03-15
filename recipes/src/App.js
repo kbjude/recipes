@@ -8,4 +8,12 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    onListRicipes: () => dispatch({type: 'LISTRICIPES'}),
+    onViewDetails: () => dispatch({type: 'VIEWDETAILS'}),
+    onAddRecipe: () => dispatch({type: 'ADDRICIPE'})
+  }
+};
+
+export default App; 

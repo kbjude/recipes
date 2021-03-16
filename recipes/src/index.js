@@ -6,7 +6,7 @@ import { createStore } from 'redux';
 import App from './App';
 import Reducer from './store/reducer';
 
-const store = createStore(reducer);
+const store = createStore(Reducer);
 
 ReactDOM.render(
   <Provider store={store}>

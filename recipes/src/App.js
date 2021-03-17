@@ -1,6 +1,8 @@
 import './App.css';
+import { Provider } from 'react-redux';
 
 function App() {
+  const [recipes, setRecipes] = useState(initialState);
   return (
     <div className="App">
       Capstone
@@ -8,18 +10,4 @@ function App() {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    
-  }
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    onListRicipes: () => dispatch({type: 'LIST_RICIPES'}),
-    onViewDetails: () => dispatch({type: 'VIEW_DETAILS'}),
-    onAddRecipe: () => dispatch({type: 'ADD_RICIPE'})
-  }
-};
-
-export default App; 
+export default App;

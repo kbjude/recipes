@@ -1,12 +1,12 @@
 import './App.css';
 import { Provider } from 'react-redux';
+import store from './reducers/store';
 
 function App() {
-  const [recipes, setRecipes] = useState(initialState);
   return (
-    <div className="App">
+    <Provider store={store}>
       Capstone
-    </div>
+    </Provider>
   );
 }
 

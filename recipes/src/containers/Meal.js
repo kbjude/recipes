@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Spice = ({
+const Meal = ({
   id, name, category,
 }) => (
   <div>
@@ -12,10 +12,10 @@ const Spice = ({
   </div>
 );
 
-Spice.propTypes = {
+Meal.propTypes = {
   id: PropTypes.number.isRequired,
   category: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };
 
-export default Spice;
+export default Meal;

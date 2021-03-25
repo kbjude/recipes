@@ -1,21 +1,35 @@
-const initialState = {
-  'Melt-in-Your-Mouth Chuck Roast': [
-    '1 can (14-1/2 ounces) Italian stewed tomatoes, undrained',
-    '1/2 cup beef broth',
-    '1/2 cup ketchup',
-    '3 tablespoons brown sugar',
-    '2 tablespoons Worcestershire sauce',
-    '4 teaspoons prepared mustard',
-    '3 garlic cloves, minced',
-    '1 tablespoon soy sauce',
-  ],
-  'Beef and Mushrooms with Smashed Potatoes': [
-    '1-1/2 pounds red potatoes (about 6 medium), cut into 1-1/2-inch pieces',
-    '1 pound ground beef',
-    '1/2 pound sliced fresh mushrooms',
-    '1 medium onion, halved and sliced',
-    '  3 tablespoons all-purpose flour',
-  ],
+import { FETCH_MEALS_PENDING, FETCH_MEALS_SUCCESS, FETCH_MEALS_ERROR } from '../actions/action';
+
+export const initialState = {
+  pending: false,
+  meals: [],
+  error: null,
 };
 
-export default initialState;
+export function mealsReducer(state = initialState, action) {
+  switch (action.type) {
+    case FETCH_MEALS_PENDING:
+      return {
+        ...state,
+        pending: true,
+      };
+    case FETCH_MEALS_SUCCESS:
+      return {
+        ...state,
+        pending: false,
+        meals: action.meals,
+      };
+    case FETCH_MEALS_ERROR:
+      return {
+        ...state,
+        pending: false,
+        error: action.error,
+      };
+    default:
+      return state;
+  }
+}
+
+export const getMeals = state => state.meals;
+export const getMealsPending = state => state.pending;
+export const getMealsError = state => state.error;

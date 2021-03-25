@@ -9,7 +9,6 @@ const Meal = ({
     <h3>{name}</h3>
     <img src={image} alt="" />
     <h3>{description}</h3>
-    <button type="button">Testing</button>
   </div>
 );
 

@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Detail from './MealDetails';
+import fetchMealDetails from '../api/fetchMealDetails';
+
+const dispatch = useDispatch();
+useEffect(() => {
+  dispatch(fetchMealDetails());
+}, []);
 
 const Meal = ({
   id, name, image, description,

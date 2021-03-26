@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Detail from './MealDetails';
 
 const Meal = ({
   id, name, image, description,
@@ -9,6 +10,8 @@ const Meal = ({
     <h3>{name}</h3>
     <img src={image} alt="" />
     <h3>{description}</h3>
+
+    <Detail idmeal="1" meal="Chicken" drink="Soda" category="Rocke" area="Soho" instructions="great" />
   </div>
 );
 

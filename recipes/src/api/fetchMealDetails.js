@@ -1,4 +1,4 @@
-import { fetchMealsPending, fetchMealsSuccess, fetchMealsError } from '../actions/action';
+import { fetchMealDetailsPending, fetchMealDetailsSuccess, fetchMealDetailsError } from '../actions/action';
 
 function fetchMealDetails() {
   return dispatch => {

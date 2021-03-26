@@ -12,6 +12,11 @@ function App() {
     dispatch(fetchMeals());
   }, []);
 
+  const dispatch = useDispatch()
+    useEffect(() => {
+      dispatch(fetchMealDetails();)
+    })
+
   return (
     <>
       {data.meals && data.meals.map(meal => (

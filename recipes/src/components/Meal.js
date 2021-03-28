@@ -1,12 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Detail from './MealDetails';
-import fetchMealDetails from '../api/fetchMealDetails';
-
-const dispatch = useDispatch();
-useEffect(() => {
-  dispatch(fetchMealDetails());
-}, []);
+// import { useDispatch, useSelector } from 'react-redux';
+// import Detail from './MealDetails';
+// import fetchMealDetails from '../api/fetchMealDetails';
 
 const Meal = ({
   id, name, image, description,
@@ -17,7 +13,17 @@ const Meal = ({
     <img src={image} alt="" />
     <h3>{description}</h3>
 
-    <Detail idmeal="1" meal="Chicken" drink="Soda" category="Rocke" area="Soho" instructions="great" />
+    {/* {data.meals.map(meal => (
+        <Detail
+          key={meal.idMeal}
+          idmeal={meal.idMeal}
+          meal={meal.strMeal}
+          drink={meal.strDrinkAlternate}
+          category={meal.strCategory}
+          area={meal.strArea}
+          instructions={meal.strInstructions}
+        />
+      ))} */}
   </div>
 );
 

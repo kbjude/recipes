@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // import Detail from './MealDetails';
 // import fetchMealDetails from '../api/fetchMealDetails';
 
-const Meal = ({
+const Ingredient = ({
   id, name, image,
 }) => (
   <div>
@@ -14,10 +14,10 @@ const Meal = ({
   </div>
 );
 
-Meal.propTypes = {
+Ingredient.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
 };
 
-export default Meal;
+export default Ingredient;

@@ -1,26 +1,27 @@
 import './App.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Meal from '../components/Meal';
-import fetchMeals from '../api/fetchMeals';
+import Category from '../components/Category';
+import fetchCategories from '../api/fetchCategories';
 
 function App() {
-  const { data } = useSelector(state => state);
+  const { category } = useSelector(state => state);
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchMeals());
+    dispatch(fetchCategories());
   }, []);
 
   return (
     <>
-      {data.meals && data.meals.map(meal => (
-        <Meal
-          key={meal.idCategory}
-          id={meal.idCategory}
-          name={meal.strCategory}
-          description={meal.strCategoryDescription}
-          image={meal.strCategoryThumb}
+      {category.categories && category.categories.map(category => (
+        <Category
+          key={category.idCategory}
+          id={category.idCategory}
+          name={category.strCategory}
+          description={category.strCategoryDescription}
+          image={category.strCategoryThumb}
+          path={`/meals/${category.strCategory}`}
         />
       ))}
     </>

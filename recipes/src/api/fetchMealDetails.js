@@ -9,8 +9,8 @@ function fetchMealDetails() {
         if (res.error) {
           throw (res.error);
         }
-        dispatch(fetchMealDetailsSuccess(res.meals));
-        return res.meals;
+        dispatch(fetchMealDetailsSuccess(res.mealDetail));
+        return res.mealDetail;
       })
       .catch(error => {
         dispatch(fetchMealDetailsError(error));

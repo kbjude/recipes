@@ -16,8 +16,8 @@ export function ingredientsReducer(state = initialState, action) {
     case FETCH_INGREDIENT_SUCCESS:
       return {
         ...state,
-        pending: false,
-        meals: action.meals,
+        pending: true,
+        ingredients: action.ingredients,
       };
     case FETCH_INGREDIENT_ERROR:
       return {
@@ -30,6 +30,6 @@ export function ingredientsReducer(state = initialState, action) {
   }
 }
 
-export const getMeals = state => state.meals;
-export const getMealsPending = state => state.pending;
-export const getMealsError = state => state.error;
+export const getIngredients = state => state.ingredients;
+export const getIngredientsPending = state => state.pending;
+export const getIngredientsError = state => state.error;

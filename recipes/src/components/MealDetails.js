@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Detail = ({
+const MealDetail = ({
   idmeal,
   meal,
   drink,
@@ -63,7 +63,7 @@ const Detail = ({
   </>
 );
 
-Detail.propTypes = {
+MealDetail.propTypes = {
   idmeal: PropTypes.string.isRequired,
   meal: PropTypes.string.isRequired,
   drink: PropTypes.string.isRequired,
@@ -77,4 +77,4 @@ Detail.propTypes = {
   strIngredient3: PropTypes.string.isRequired,
 };
 
-export default Detail;
+export default MealDetail;

@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-// import { useDispatch, useSelector } from 'react-redux';
-// import Detail from './MealDetails';
-// import fetchMealDetails from '../api/fetchMealDetails';
 
 const Category = ({
   id, name, image, description, path,

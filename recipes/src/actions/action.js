@@ -1,15 +1,17 @@
 export const FETCH_MEALS_PENDING = 'FETCH_MEALS_PENDING';
 export const FETCH_MEALS_SUCCESS = 'FETCH_MEALS_SUCCESS';
 export const FETCH_MEALS_ERROR = 'FETCH_MEALS_ERROR';
-export const FETCH_MEAL_INGREDIENT_PENDING = 'FETCH_INGREDIENT_PENDING';
-export const FETCH_MEAL_INGREDIENT_SUCCESS = 'FETCH_MEAL_INGREDIENT_SUCCESS';
-export const FETCH_MEAL_INGREDIENT_ERROR = 'FETCH_INGREDIENT_ERROR';
+
+export const FETCH_MEAL_DETAILS_PENDING = 'FETCH_MEAL_DETAILS_PENDING';
+export const FETCH_MEAL_DETAILS_SUCCESS = 'FETCH_MEAL_DETAILS_SUCCESS';
+export const FETCH_MEAL_DETAILS_ERROR = 'FETCH_MEAL_DETAILS_ERROR';
+
 export const FETCH_CATEGORIES_PENDING = 'FETCH_CATEGORIES_PENDING';
 export const FETCH_CATEGORIES_SUCCESS = 'FETCH_CATEGORIES_SUCCESS';
 export const FETCH_CATEGORIES_ERROR = 'FETCH_CATEGORIES_ERROR';
 export const FETCH_INGREDIENT_PENDING = 'FETCH_INGREDIENT_PENDING';
 export const FETCH_INGREDIENT_SUCCESS = 'FETCH_INGREDIENT_SUCCESS';
-export const FETCH_INGREDIENT_ERROR = 'FETCH_INGREDIENT_SUCCESS';
+export const FETCH_INGREDIENT_ERROR = 'FETCH_INGREDIENT_ERROR';
 
 export function fetchMealsPending() {
   return {
@@ -52,15 +54,34 @@ export function fetchCategoriesError(error) {
 }
 
 export const fetchMealIngredientsPending = () => ({
-  type: FETCH_MEAL_INGREDIENT_PENDING,
+  type: FETCH_INGREDIENT_PENDING,
 });
 
-export const fetchMealIngredientsSuccess = detail => ({
-  type: FETCH_MEAL_INGREDIENT_SUCCESS,
-  detail,
-});
+export function fetchMealIngredientsSuccess(ingredients) {
+  console.log(ingredients);
+  return {
+    type: FETCH_INGREDIENT_SUCCESS,
+    ingredients,
+  };
+}
 
 export const fetchMealIngredientsError = error => ({
-  type: FETCH_MEAL_INGREDIENT_ERROR,
+  type: FETCH_INGREDIENT_ERROR,
+  error,
+});
+
+export const fetchMealDetailsPending = () => ({
+  type: FETCH_MEAL_DETAILS_PENDING,
+});
+
+export function fetchMealDetailsSuccess(details) {
+  return {
+    type: FETCH_MEAL_DETAILS_SUCCESS,
+    details,
+  };
+}
+
+export const fetchMealDetailsError = error => ({
+  type: FETCH_MEAL_DETAILS_ERROR,
   error,
 });

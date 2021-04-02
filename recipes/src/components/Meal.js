@@ -1,23 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { useDispatch, useSelector } from 'react-redux';
-// import Detail from './MealDetails';
-// import fetchMealDetails from '../api/fetchMealDetails';
+import { Link } from 'react-router-dom';
 
 const Meal = ({
-  id, name, image,
+  id, name, image, path,
 }) => (
-  <div>
-    <h5>{id}</h5>
-    <h3>{name}</h3>
-    <img src={image} alt="" />
-  </div>
+  <Link to={path}>
+    <div>
+      <h5>{id}</h5>
+      <h3>{name}</h3>
+      <img src={image} alt="" />
+    </div>
+  </Link>
 );
 
 Meal.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
 };
 
 export default Meal;

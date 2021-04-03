@@ -12,8 +12,6 @@ function mealDetalsContainer({ match }) {
   useEffect(() => {
     dispatch(fetchMealDetails(match.params.id));
   }, []);
-  console.log(mealDetails);
-  console.log('State has changed');
   return (
     <>
       {mealDetails.details && mealDetails.details.map(meal => (

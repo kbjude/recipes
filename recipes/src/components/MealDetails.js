@@ -17,11 +17,6 @@ const MealDetail = ({
       {' '}
     </span>
     <span>
-      <h4> Image </h4>
-      { meal.strMealThumb }
-      {' '}
-    </span>
-    <span>
       <h4> Ingredients </h4>
       <ul>
         <li>

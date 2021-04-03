@@ -3,33 +3,32 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchMealDetails } from '../api/fetchMeals';
-import MealDetails from '../components/MealDetails';
+import MealDetail from '../components/MealDetails';
 
-function MealDetailsContainer({ match }) {
+function mealDetalsContainer({ match }) {
   const { mealDetails } = useSelector(state => state);
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchMealDetails(match.params.id));
   }, []);
+  console.log(mealDetails);
+  console.log('State has changed');
   return (
     <>
       {mealDetails.details && mealDetails.details.map(meal => (
-        <MealDetails
+        <MealDetail
           key={meal.idMeal}
-          id={meal.idMeal}
-          name={meal.strMeal}
-          image={meal.strMealThumb}
-          path={`/meals/details/${meal.idMeal}`}
+          meal={meal}
         />
       ))}
     </>
   );
 }
 
-MealDetailsContainer.propTypes = {
+mealDetalsContainer.propTypes = {
   match: PropTypes.shape(
     { params: PropTypes.shape({ id: PropTypes.string.isRequired }).isRequired },
   ).isRequired,
 };
-export default MealDetailsContainer;
+export default mealDetalsContainer;

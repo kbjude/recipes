@@ -12,7 +12,6 @@ function Meals({ match }) {
   useEffect(() => {
     dispatch(fetchMeals(match.params.name));
   }, []);
-  console.log('state has chang');
   return (
     <>
       {data.meals && data.meals.map(meal => (

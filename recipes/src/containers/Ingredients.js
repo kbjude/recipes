@@ -13,8 +13,6 @@ function Ingredients({ match }) {
     dispatch(fetchMealIngredients(match.params.name));
   }, []);
 
-  console.log(ingredient);
-
   return (
     <>
       {ingredient.ingredients && ingredient.ingredients.map(ingredient => (

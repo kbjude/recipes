@@ -59,7 +59,6 @@ export const fetchMealIngredientsPending = () => ({
 });
 
 export function fetchMealIngredientsSuccess(ingredients) {
-  console.log(ingredients);
   return {
     type: FETCH_INGREDIENT_SUCCESS,
     ingredients,

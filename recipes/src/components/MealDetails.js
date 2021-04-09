@@ -118,7 +118,6 @@ MealDetail.propTypes = {
     strMeal: PropTypes.string.isRequired,
     strInstructions: PropTypes.string.isRequired,
     strCategory: PropTypes.string.isRequired,
-    strMealThumb: PropTypes.string.isRequired,
     strTags: PropTypes.string.isRequired,
     strIngredient1: PropTypes.string.isRequired,
     strIngredient2: PropTypes.string.isRequired,

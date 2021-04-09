@@ -7,7 +7,7 @@ import App from '../../containers/App';
 
 const character = {
   name: 'Beef',
-  description: 'Beef is the culinary name for meat from cattle, particularly skeletal muscle. Humans have been eating beef since prehistoric times.[1] Beef is a source of high-quality protein and essential nutrients'
+  description: 'Beef'
 };
 
 describe('Display snapshot', () => {

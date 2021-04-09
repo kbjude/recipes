@@ -6,9 +6,10 @@ import store from '../../reducers/store';
 import App from '../../containers/App';
 
 const character = {
-  name: 'Breakfast',
-  description: 'Breakfast'
+  name: 'Beef',
+  description: 'Beef'
 };
+
 describe('Display snapshot', () => {
     it('renders correctly a snapshot', () => {
       const snap = renderer.create(

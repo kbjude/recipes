@@ -113,17 +113,6 @@ function App() {
           path={`/meals/${category.strCategory}`}
         />
       ))}
-      {category.categories && category.categories.map(category => (
-        <Category
-          key={category.idCategory}
-          id={category.idCategory}
-          name={category.strCategory}
-          description={category.strCategoryDescription}
-          image={category.strCategoryThumb}
-          path={`/meals/${category.strCategory}`}
-        />
-      ))}
-
       <Pagination
         charsPerPage={charsPerPage}
         totalChars={charInfo.length}

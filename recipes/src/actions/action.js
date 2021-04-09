@@ -1,6 +1,7 @@
 export const FETCH_MEALS_PENDING = 'FETCH_MEALS_PENDING';
 export const FETCH_MEALS_SUCCESS = 'FETCH_MEALS_SUCCESS';
 export const FETCH_MEALS_ERROR = 'FETCH_MEALS_ERROR';
+export const FILTER_BY_NAME = 'FILTER_BY_NAME';
 
 export const FETCH_MEAL_DETAILS_PENDING = 'FETCH_MEAL_DETAILS_PENDING';
 export const FETCH_MEAL_DETAILS_SUCCESS = 'FETCH_MEAL_DETAILS_SUCCESS';
@@ -13,6 +14,8 @@ export const FETCH_CATEGORIES_ERROR = 'FETCH_CATEGORIES_ERROR';
 export const FETCH_INGREDIENT_PENDING = 'FETCH_INGREDIENT_PENDING';
 export const FETCH_INGREDIENT_SUCCESS = 'FETCH_INGREDIENT_SUCCESS';
 export const FETCH_INGREDIENT_ERROR = 'FETCH_INGREDIENT_ERROR';
+
+export const INCREMENT_OFFSET = 'INCREMENT_OFFSET';
 
 export function fetchMealsPending() {
   return {
@@ -84,4 +87,15 @@ export function fetchMealDetailsSuccess(details) {
 export const fetchMealDetailsError = error => ({
   type: FETCH_MEAL_DETAILS_ERROR,
   error,
+});
+
+export const incrementOffset = increase => ({
+  type: INCREMENT_OFFSET,
+  increase,
+});
+
+export const filterByName = (name, chars) => ({
+  type: FILTER_BY_NAME,
+  name,
+  chars,
 });

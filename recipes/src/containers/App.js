@@ -52,7 +52,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isActive, setActive] = useState(false);
   const { filteredChars } = filter;
-  const [charsPerPage] = useState(56);
+  const [charsPerPage] = useState(5);
   const increaseOffset = () => {
     if (offset.offset < 1500) dispatch(incrementOffset(100));
   };

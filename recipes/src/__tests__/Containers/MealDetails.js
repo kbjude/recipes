@@ -8,7 +8,7 @@ const meal = {
   name: '',
   id: '',
   description: ''
-};
+}
 describe('Display', () => {
   it('renders correctly', () => {
     const snap = renderer.create(

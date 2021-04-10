@@ -1,4 +1,4 @@
-import { render, screen, act } from '@testing-library/react';
+import { act } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
@@ -22,23 +22,5 @@ describe('Display snapshot', () => {
       </BrowserRouter>,
     ).toJSON();
     expect(snap).toMatchSnapshot();
-  });
-});
-describe('Rendering component', () => {
-  it('creates a CharInfo component', () => {
-    act(() => {
-      render(
-        <BrowserRouter>
-          <Provider store={store}>
-            <MealDetails
-              match={{ params: { id: '52940' } }}
-              name={character.strCategory}
-              description={character.strCategoryDescription}
-            />
-          </Provider>
-        </BrowserRouter>,
-      );
-    });
-    screen.getByText('Chicken');
   });
 });

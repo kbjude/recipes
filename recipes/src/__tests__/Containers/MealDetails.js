@@ -1,23 +1,21 @@
-import { render, screen, act } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import store from '../../reducers/store';
-import App from '../../containers/App';
+import MealDetails from '../../containers/MealDetailsContainer';
 
-const character = {
-  name: 'Beef',
-  description: 'Beef',
+const meal = {
+  name: '',
+  id: '',
+  description: ''
 };
-
-describe('Display snapshot', () => {
-  it('renders correctly a snapshot', () => {
+describe('Display', () => {
+  it('renders correctly', () => {
     const snap = renderer.create(
       <BrowserRouter>
         <Provider store={store}>
-          <App
-            name={character.strCategory}
-            description={character.strCategoryDescription}
+          <MealDetails
+            match={{ params: { id: '2' } }}
           />
         </Provider>
       </BrowserRouter>,

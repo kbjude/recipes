@@ -6,10 +6,9 @@ import store from '../../reducers/store';
 import App from '../../containers/App';
 
 const character = {
-  name: 'Beef',
-  description: 'Beef',
+  name: 'Breakfast',
+  description: 'Breakfast',
 };
-
 describe('Display snapshot', () => {
   it('renders correctly a snapshot', () => {
     const snap = renderer.create(
@@ -23,5 +22,23 @@ describe('Display snapshot', () => {
       </BrowserRouter>,
     ).toJSON();
     expect(snap).toMatchSnapshot();
+  });
+});
+describe('Rendering component', () => {
+  it('creates a CharInfo component', () => {
+    act(() => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <MealDetails
+              match={{ params: { id: '52940' } }}
+              name={character.strCategory}
+              description={character.strCategoryDescription}
+            />
+          </Provider>
+        </BrowserRouter>,
+      );
+    });
+    screen.getByText('Chicken');
   });
 });

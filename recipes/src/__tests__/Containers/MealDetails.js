@@ -7,8 +7,8 @@ import MealDetails from '../../containers/MealDetailsContainer';
 const meal = {
   name: '',
   id: '',
-  description: ''
-}
+  description: '',
+};
 describe('Display', () => {
   it('renders correctly', () => {
     const snap = renderer.create(

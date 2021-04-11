@@ -4,11 +4,6 @@ import { Provider } from 'react-redux';
 import store from '../../reducers/store';
 import MealDetails from '../../containers/MealDetailsContainer';
 
-const meal = {
-  name: '',
-  id: '',
-  description: '',
-};
 describe('Display', () => {
   it('renders correctly', () => {
     const snap = renderer.create(
